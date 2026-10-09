@@ -1,0 +1,43 @@
+/* Интерфейс показа пяти дизайнов. Не относится к редизайну сайта внутри iframe. */
+:root{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:#202321;background:#e9ebe8}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+button{font:inherit}
+.app{height:100dvh;display:grid;grid-template-columns:205px minmax(0,1fr)}
+.sidebar{background:#fff;padding:28px 15px;border-right:1px solid #e1e3df;display:flex;flex-direction:column;gap:28px;overflow-y:auto}
+.demo-logo{display:block;width:160px;height:auto;object-fit:contain;margin:0 auto}
+.options{display:flex;flex-direction:column;gap:9px}
+.option{width:100%;min-height:51px;border:1px solid #dfe1de;border-radius:3px;background:#fff;color:#202321;text-align:left;padding:13px 17px;cursor:pointer;font-size:14px;font-weight:600;transition:border-color .15s,background .15s,color .15s}
+.option:hover{border-color:#666e69}
+.option[aria-selected="true"]{background:#262a28;color:#fff;border-color:#262a28}
+.option:focus-visible,.device:focus-visible{outline:2px solid #d96b47;outline-offset:2px}
+.viewer{min-width:0;min-height:0;display:flex;flex-direction:column}
+.controls{background:#fff;min-height:62px;border-bottom:1px solid #e1e3df;display:flex;gap:14px;align-items:center;justify-content:space-between;padding:10px 20px}
+.control-info{font-size:14px;letter-spacing:-.015em;font-weight:650}
+.devices{display:flex;flex-wrap:nowrap;gap:6px}
+.device{background:#fff;color:#3a3d3b;border:1px solid #d9ddd8;border-radius:3px;padding:9px 11px;cursor:pointer;font-size:12px;font-weight:550;white-space:nowrap}
+.device:hover{border-color:#6a716d}
+.device.active{background:#252b27;color:#fff;border-color:#252b27}
+.stage{min-height:0;min-width:0;overflow:auto;flex:1;padding:18px;display:flex;align-items:flex-start;justify-content:center;background:#e9ebe8}
+.preview{display:block;width:100%;max-width:1440px;height:100%;min-height:400px;border:0;flex-shrink:0;background:white;box-shadow:0 8px 28px #14171417}
+.stage[data-device="desktop"] .preview{width:1440px;max-width:none}
+.stage[data-device="tablet"] .preview{width:768px;max-width:none}
+.stage[data-device="mobile"] .preview{width:390px;max-width:none}
+.stage[data-device="auto"] .preview{width:100%;max-width:1440px}
+@media(max-width:850px){
+  .app{display:flex;flex-direction:column;min-height:100dvh;height:100dvh}
+  .sidebar{flex-shrink:0;padding:8px 12px;display:flex;flex-direction:row;align-items:center;gap:12px;overflow:visible;border-right:0;border-bottom:1px solid #dfe3df}
+  .demo-logo{width:83px;margin:0;flex-shrink:0}
+  .options{min-width:0;overflow-x:auto;display:flex;flex-direction:row;gap:6px;padding:4px 2px}
+  .option{width:auto;min-width:max-content;min-height:36px;padding:9px 11px;font-size:12px}
+  .controls{padding:8px 12px;min-height:52px}
+  .device{padding:8px;font-size:11px}
+  .stage{padding:10px}
+}
+@media(max-width:520px){
+ .sidebar{gap:8px;padding:7px 8px}.demo-logo{width:65px}
+ .controls{gap:8px;padding:6px 8px}.control-info{font-size:12px}
+ .devices{gap:3px}.device{padding:7px 6px;font-size:10px}
+ .stage{padding:5px;justify-content:flex-start}
+ .stage[data-device="mobile"] .preview{width:min(390px,100%)}
+}

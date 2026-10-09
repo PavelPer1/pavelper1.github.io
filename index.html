@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Пять вариантов редизайна мебельной фабрики ЛААМА">
+  <meta name="robots" content="noindex,nofollow">
+  <title>ЛААМА — дизайн</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="stylesheet" href="css/preview.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+ <main class="app">
+  <aside class="sidebar" aria-label="Выбор дизайна">
+   <img src="assets/logo.png" class="demo-logo" alt="ЛААМА" width="160" height="51">
+   <nav id="options" class="options" role="tablist" aria-label="Дизайны"></nav>
+  </aside>
+  <section class="viewer" aria-label="Просмотр макета">
+   <header class="controls">
+    <span id="control-name" class="control-info">Дизайн -1</span>
+    <div class="devices" role="group" aria-label="Размер экрана">
+     <button type="button" class="device active" data-device="auto" aria-pressed="true">Авто</button>
+     <button type="button" class="device" data-device="desktop" aria-pressed="false">1440</button>
+     <button type="button" class="device" data-device="tablet" aria-pressed="false">768</button>
+     <button type="button" class="device" data-device="mobile" aria-pressed="false">390</button>
+    </div>
+   </header>
+   <div class="stage" data-device="auto" id="stage">
+    <iframe id="preview" class="preview" title="Дизайн -1" loading="eager"></iframe>
+   </div>
+  </section>
+ </main>
+</body>
+</html>
